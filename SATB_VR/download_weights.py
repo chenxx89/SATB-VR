@@ -18,14 +18,14 @@ def _check_hf_accessible(timeout=5):
         return False
 
 
-def download_ckpts(ckpt_path, enable_text_encoder=False):
+def download_ckpts(ckpt_path, download_captioner=False):
     if not _check_hf_accessible():
         os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
     
     from huggingface_hub import snapshot_download
 
     ckpt_names = ["CogVideoX1.5-5B", "SATB-VR"]
-    if enable_text_encoder:
+    if download_captioner:
         ckpt_names.append("cogvlm2-llama3-caption")
 
     for ckpt_name in ckpt_names:
@@ -45,4 +45,4 @@ def download_ckpts(ckpt_path, enable_text_encoder=False):
 
 
 if __name__ == "__main__":
-    download_ckpts("./ckpts")
+    download_ckpts("./ckpts", download_captioner=True)
