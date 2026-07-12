@@ -89,8 +89,6 @@ For more video visualizations, visit our <a href="https://chenxx89.github.io/pro
     │   │   ├── controlnet
     │   │       ├── config.json
     │   │       ├── diffusion_pytorch_model.safetensors
-    │   │   ├── lora_controlnet
-    │   │       ├── pytorch_lora_weights.safetensors
     │   │   ├── lora_predictor
     │   │       ├── pytorch_lora_weights.safetensors
     │   │   ├── lora_transformer

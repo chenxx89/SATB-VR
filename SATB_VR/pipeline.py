@@ -131,8 +131,6 @@ class CogVideoXVRPipeline(DiffusionPipeline):
         controlnet = CogVideoXControlnet.from_pretrained(
             pretrained_model_name_or_path=satb_ckpt_path,
             subfolder="controlnet")
-        controlnet.load_lora_adapter(os.path.join(satb_ckpt_path, "lora_controlnet"),
-            use_safetensors=True, adapter_name='default', prefix=None)
         controlnet.requires_grad_(False)
         controlnet.to(dtype=weight_dtype)
 
